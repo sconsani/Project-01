@@ -23,6 +23,7 @@ app.use(express.static(`${__dirname}/public`));
 
 // BodyParser - Make Request Data Available on req.body
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 // HTML ROUTES
