@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Bucketlist = require("./Bucketlist");
 
 const DonutStoreSchema = new mongoose.Schema({
     place_id: String,
@@ -13,8 +12,11 @@ const DonutStoreSchema = new mongoose.Schema({
         photo_reference: String,
     },
     weekday_text: String,
-    bucketlists: [Bucketlist.Schema],
-});
+    bucketlists: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "Bucketlist"
+    }
+})
 
 const DonutStore = mongoose.model("DonutStore", DonutStoreSchema);
 

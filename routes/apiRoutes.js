@@ -1,22 +1,21 @@
-// API ROUTES
+const express = require("express");
+const router = express.Router();
+const db = require("../models");
+const ctrl = require("../controllers");
 
-app.get('/api/v1/', (req, res) => {
-  DonutStore.find({}, (err, allStores) => {
-    if (err) {
-      return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-    }
+// GET DonutStores Index
+router.get("/donutStores", ctrl.donutStoresCtrl.index);
 
-    res.json(donutStores);
-  });
-});
+// GET Bucketlists Index
+router.get("/bucketlists", ctrl.bucketlistsCtrl.index);
 
-//added bucketlist stores
-app.get('/api/v1/my-bucketlist', (req, res) => {
-  DonutStore.find({}, (err, bucketlistItems) => {
-    if (err) {
-      return res.status(400).json({status: 400, error: 'Something went wrong, please try again'});
-    }
+// POST Bucketlists Create
+router.post("/bucketlists", ctrl.bucketlistsCtrl.create);
 
-    res.json(addedStores);
-  });
-});
+// PUT Bucketlists Update
+// router.put("/bucketlists", ctrl.bucketlistsCtrl.update);
+
+// DELETE Bucketlists
+
+
+module.exports = router;
