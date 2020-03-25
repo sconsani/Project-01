@@ -205,3 +205,13 @@ db.DonutStore.insertMany(newDonutStore, (err, donutStore) => {
         process.exit();
     }
 });
+
+// db.FosterPup.deleteMany({}, (err, result) => {
+// 	if (err) {
+// 		console.log(err);
+// 		process.exit();
+// 	}
+// 	console.log(`Successfully deleted ${result.deletedCount}`);
+// 	process.exit();
+// });
+
