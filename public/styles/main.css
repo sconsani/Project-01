@@ -1,6 +1,9 @@
 body{
+	background-color: orange;
+	color: black;
+	margin-bottom: 50px;
 
-}
+};
 
 footer {
 	position: fixed;
@@ -11,9 +14,18 @@ footer {
 	color: white;
 	text-align: left;
 	font-size: 12px;
+	border-color: red;
+	border-width: 3px;
+	height: 50px;
 
 };
 
-#site {
-	height: 100%;
-}
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+};
+
+#add-button {
+	background-color: red;
+};
