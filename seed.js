@@ -1,4 +1,18 @@
-module.exports = [
+const mongoose = require("mongoose");
+const db = require("./models");
+const DB_URI = "mongodb://localhost:27017/doughnit";
+
+mongoose.connect(DB_URI, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log("MongoDB connected"))
+.catch((err) => console.log(err));
+
+
+const newDonutStore = [
     {
         place_id: "",
         name: "Sunshine Cafe",
@@ -11,7 +25,8 @@ module.exports = [
         },
         rating: 4.2,
         hours: "7:00am - 3:00pm",
-        website: "https://www.sunshinecafesf.com/"
+        website: "https://www.sunshinecafesf.com/",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -25,7 +40,8 @@ module.exports = [
         },
         rating: 4.4,
         hours: "9:00am - 9:00pm",
-        website: "https://www.trishsdishesfoods.com/trishsminidonuts"
+        website: "https://www.trishsdishesfoods.com/trishsminidonuts",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -39,7 +55,8 @@ module.exports = [
         },
         rating: 4.6,
         hours: "24 hours",
-        website: "https://www.bobsdonutssf.com/"
+        website: "https://www.bobsdonutssf.com/",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -53,7 +70,8 @@ module.exports = [
         },
         rating: 4.3,
         hours: "7:00am - 6:00pm",
-        website: "http://johnnydoughnuts.com/"
+        website: "http://johnnydoughnuts.com/",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -67,7 +85,8 @@ module.exports = [
         },
         rating: 4.5,
         hours: "6:00am - 5:00pm",
-        website: "http://twisteddonutsf.com/"
+        website: "http://twisteddonutsf.com/",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -81,7 +100,8 @@ module.exports = [
         },
         rating: 4.6,
         hours: "8:00am - 4:00pm",
-        website: "https://dynamodonut.com/"
+        website: "https://dynamodonut.com/",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -95,7 +115,8 @@ module.exports = [
         },
         rating: 4.6,
         hours: "5:00am - 4:00pm",
-        website: "https://www.thrillist.com/venue/eat/san-francisco/restaurants/the-jelly-donut"
+        website: "https://www.thrillist.com/venue/eat/san-francisco/restaurants/the-jelly-donut",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -109,7 +130,8 @@ module.exports = [
         },
         rating: 4.3,
         hours: "7:00am - 3:00pm",
-        website: "http://www.kingpindonuts.com/"
+        website: "http://www.kingpindonuts.com/",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -123,7 +145,8 @@ module.exports = [
         },
         rating: 4.4,
         hours: "5:00am - 7:00pm",
-        website: "http://orderrainbowdonuts.com/index.php"
+        website: "http://orderrainbowdonuts.com/index.php",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -137,7 +160,8 @@ module.exports = [
         },
         rating: 4.4,
         hours: "24 hours",
-        website: "https://www.yelp.com/biz/colonial-donuts-oakland-3"
+        website: "https://www.yelp.com/biz/colonial-donuts-oakland-3",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -151,7 +175,8 @@ module.exports = [
         },
         rating: 4.5,
         hours: "10:00am - 3:00pm",
-        website: "https://www.lebontaitaliane.com/"
+        website: "https://www.lebontaitaliane.com/",
+        bucketlists: [],
     },
     {
         place_id: "",
@@ -165,6 +190,18 @@ module.exports = [
         },
         rating: 4.5,
         hours: "24 hours",
-        website: "https://www.lebontaitaliane.com/"
+        website: "https://www.lebontaitaliane.com/",
+        bucketlists: [],
     }
-]
+];
+
+db.DonutStore.insertMany(newDonutStore, (err, donutStore) => {
+    if (err) {
+        console.log(err);
+        process.exit();
+    }
+    else {
+        console.log("Created new donut store", donutStore);
+        process.exit();
+    }
+});
