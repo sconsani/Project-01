@@ -6,10 +6,15 @@ const PORT = process.env.PORT || 4000;
 
 
 // DATABASE
+// do we remove this since it's in routes/index.js
 const db = require("./models")
+console.log("Db in server.js", db);
 
 // Init Route
 app.get("/", (req, res) => res.send(`<h1>DOUGHNIT</h1>`));
+
+// Routes
+const routes = require("./routes");
 
 
 // MIDDLEWARE
@@ -24,7 +29,7 @@ app.use(bodyParser.json());
 app.use("/", routes.views);
 
 // API ROUTES
-app.use("/", routes.api);
+app.use("/api/v1/", routes.api);
 
 // START SERVER
 app.listen(PORT, () => console.log(`Server running at local host 4000`));
