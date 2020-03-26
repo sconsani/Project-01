@@ -21,20 +21,22 @@ function renderHomePage(donutStores) {
 };
 
 function donutCard(donutStore) {
- return `<div class = "card" style= "width: 18rem;">
-        <img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "test">
+ return `<div class = "card mb-3" style= "min-width:15rem; max-width:15rem;">
+        <img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "donut image" style = "width: 100%;
+    height: 15vw; object-fit: cover;">
         <div class = "card-body">
             <h5 class = "card-title">${donutStore.name}</h5>
-        </div>
         <ul class = "list-group list-group-flush">
             <li class = "list-group-item">${donutStore.formatted_address}</li>
             <li class = "list-group-item">${donutStore.weekday_text}</li>
             <li class = "list-group-item">${donutStore.rating}</li>
         </ul>
         <div class = "card-body">
-            <a href="#" class="btn btn-primary bg-danger" id="add-btn">Add to Bucketlist</a>
+            <a href="#" class="btn btn-primary bg-danger position-absolute mid-center">Add to Bucketlist</a>
         </div>
-        </div>`;
+        </div>
+ </div>
+        `;
 }
 getDonutStores();
 });
