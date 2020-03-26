@@ -3,21 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 	<!-- Main CSS -->
-	<link rel="stylesheet" href="../public/styles/main.css">
+	<link rel="stylesheet" href="styles/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
 	 <!-- VENDOR SCRIPTS -->
     <script defer src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 	<!-- Main JS -->
 	<script defer src="/scripts/donutStoresIndex.js"></script>
 
 	<title>Doughnit!</title>
 </head>
 
-<body>
 	<header>
-		 <nav class="navbar navbar-expand-md navbar-dark bg-success pt-3 pb-3">
+		 <nav class="navbar navbar-expand-md navbar-dark bg-info pt-0 pb-0 pl-0 pr-0 mr-0 mr-l-0">
 	      <div class="container">
-	        <a class="navbar-brand" href="/">Doughnit</a>
+
+	        <a class="navbar-brand" href="/"><img id = "blue-donut" src="images/nav-blue-donut.png" alt="donut image" height = "100" width = "100"></a>
 
 	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 	          <span class="navbar-toggler-icon"></span>
@@ -26,59 +30,67 @@
 	        <div class="collapse navbar-collapse" id="navbarCollapse">
 	          <ul class="navbar-nav ml-auto">
 	            <li class="nav-item">
-	              <a class="nav-link" href="/bucketlist.html">My Bucketlist</a>
+	              <a class="nav-link" href="/bucketlist">My Bucketlist</a>
 	            </li>
-	             <li class="nav-item">
+	            <!--  <li class="nav-item">
 	              <a class="nav-link" href="">LOGIN</a>
 	            </li>
 	             <li class="nav-item">
 	              <a class="nav-link" href="">SIGNUP</a>
-	            </li>
+	            </li> -->
 	          </ul>
 	        </div>
 	      </div>
 	    </nav>
 	</header>
+<body>
+<div class = "card-wrapper" style = "max-width: 1250; margin-left: 20px;margin-right: 20px;">
+	
+	<h1>DOUGHNIT!</h1>
 
-<h1>Doughnit!</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo cupiditate tempore magni harum vitae exercitationem cumque soluta! Rerum laboriosam vero expedita, at, quaerat a in doloremque saepe dolorum, nisi incidunt.
-</p>
-	<div class="card-deck">
-		<!--  
-      <div class = "card" style= "width: 18rem;">
-      	<img class = "card-img-top" src = "../public/images/pink-donut.jpg" alt = "test">
-      	<div class = "card-body">
-      		<h5 class = "card-title">Donut Store</h5>
-      		<p class = "card-text">our little note about the store.</p>
-      	</div>
-      	<ul class = "list-group list-group-flush">
-      		<li class = "list-group-item">123 Address, San Francisco, CA 94112</li>
-      		<li class = "list-group-item">Rating 1-5</li>
-      		<li class = "list-group-item">6:00am - 4:00pm</li>
-      	</ul>
-      	<div class = "card-body">
-      		<a href="#" class="btn btn-primary bg-danger">Add to Bucketlist</a>
-      	</div>
-      </div>
+	<!-- <img id = "blue-donut" src="images/nav-blue-donut.png" alt="donut image" height = "150" width = "150"> -->
+<div style= "font-size: 20px; text-align: center;">
+	<p>Welcome to Doughnit! Explore our list of Bay Area donut shops and add them to your Bucketlist! Checkout the "My Bucketlist" link at the top navigation to see your profile and your saved donut stores. 
+	</p>
+</div>
 
-      <div class = "card" style= "width: 18rem;">
-      	<img class = "card-img-top" src = "../public/images/pink-donut.jpg" alt = "test">
-      	<div class = "card-body">
-      		<h5 class = "card-title">Donut Store</h5>
-      		<p class = "card-text">our little note about the store.</p>
-      	</div>
-      	<ul class = "list-group list-group-flush">
-      		<li class = "list-group-item">123 Address, San Francisco, CA 94112</li>
-      		<li class = "list-group-item">Rating 1-5</li>
-      		<li class = "list-group-item">6:00am - 4:00pm</li>
-      	</ul>
-      	<div class = "card-body">
-      		<a href="#" class="btn btn-primary bg-danger">Add to Bucketlist</a>
-      	</div>
-	  </div>
-	  -->
+	
+		<div class="card-deck" style = >
+			<!--  
+	      <div class = "card" style= "width: 18rem;">
+	      	<img class = "card-img-top" src = "../public/images/pink-donut.jpg" alt = "test">
+	      	<div class = "card-body">
+	      		<h5 class = "card-title">Donut Store</h5>
+	      		<p class = "card-text">our little note about the store.</p>
+	      	</div>
+	      	<ul class = "list-group list-group-flush">
+	      		<li class = "list-group-item">123 Address, San Francisco, CA 94112</li>
+	      		<li class = "list-group-item">Rating 1-5</li>
+	      		<li class = "list-group-item">6:00am - 4:00pm</li>
+	      	</ul>
+	      	<div class = "card-body">
+	      		<a href="#" class="btn btn-primary bg-danger">Add to Bucketlist</a>
+	      	</div>
+	      </div>
+
+	      <div class = "card" style= "width: 18rem;">
+	      	<img class = "card-img-top" src = "../public/images/pink-donut.jpg" alt = "test">
+	      	<div class = "card-body">
+	      		<h5 class = "card-title">Donut Store</h5>
+	      		<p class = "card-text">our little note about the store.</p>
+	      	</div>
+	      	<ul class = "list-group list-group-flush">
+	      		<li class = "list-group-item">123 Address, San Francisco, CA 94112</li>
+	      		<li class = "list-group-item">Rating 1-5</li>
+	      		<li class = "list-group-item">6:00am - 4:00pm</li>
+	      	</ul>
+	      	<div class = "card-body">
+	      		<a href="#" class="btn btn-primary bg-danger">Add to Bucketlist</a>
+	      	</div>
+		  </div>
+		  -->
+		</div>
 	</div>
-
 
 
   <!-- Bootstrap JS -->
@@ -87,11 +99,11 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
-<footer class = "page-footer font-small blue pt-4">
+<footer class = "page-footer font-small bg-info pt-3">
 	<div class = "container-fluid">
-		<div class = "row">
-			<div class = "col-md mt-md-0 mt-3">
-		<a href="/about">About Us</a>
+		<div class = "row ">
+			<div class = "col-md mt-md-0 mt-3 mb-3">
+		<a href="/about" class="text-white align-middle ">About Us</a>
 			</div>
 		</div>
 	</div>

@@ -111,7 +111,9 @@ const newDonutStore = [
             html_attributes: "",
             height: "",
             width: "",
-            photo_reference: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPdVH4hGJ1OPTdrDYhjKob9tl8AzJyTGl38Ie3iN52Pc8xfYj1",
+            photo_reference: "https://s3-media0.fl.yelpcdn.com/bphoto/VA2N6Lj1UK45gNqH82FZHw/348s.jpg",
+
+            // "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPdVH4hGJ1OPTdrDYhjKob9tl8AzJyTGl38Ie3iN52Pc8xfYj1"
         },
         rating: 4.6,
         weekday_text: "5:00am - 4:00pm",
