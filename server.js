@@ -7,8 +7,8 @@ const PORT = process.env.PORT || 4000;
 
 // DATABASE
 // do we remove this since it's in routes/index.js
-const db = require("./models")
-console.log("Db in server.js", db);
+// const db = require("./models")
+// console.log("Db in server.js", db);
 
 // Routes
 const routes = require("./routes");
