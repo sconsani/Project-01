@@ -14,7 +14,24 @@ const create = (req, res) => {
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
-        res.status(201).json(newBucketlist);
+        
+        // Find DonutStore clicked
+        db.DonutStore.findById(req.params.donutStoreId, (err, foundDonutStore) => {
+            if (err) {
+                return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+            }
+            
+            // Add DonutStore to Bucketlist
+            newBucketlist.bucketlist.push(foundDonutStore);
+
+            // Save Modififed Bucketlist
+            newBucketlist.save((err, savedBucketlist) => {
+                if (err) {
+                    return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+                }
+                res.json(newBucketlist);
+            })
+        })
     });
 };
 

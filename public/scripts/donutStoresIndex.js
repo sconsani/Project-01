@@ -32,7 +32,7 @@ function donutCard(donutStore) {
             <li class = "list-group-item">${donutStore.rating}</li>
         </ul>
         <div class = "card-body">
-            <a href="#" class="btn btn-primary bg-danger">Add to Bucketlist</a>
+            <a href="#" class="btn btn-primary bg-danger" id="add-btn">Add to Bucketlist</a>
         </div>
         </div>`;
 }
