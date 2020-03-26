@@ -5,12 +5,11 @@ $(document).ready(function(){
     function getDonutStores() {
     $.ajax({
     method: "GET",
-    url: "http://localhost:4000/api/v1/donutStores",
+    url: "http://localhost:4000/api/v1/donutstores",
     success: function(res) {
         renderHomePage(res);
     },
     error: function(err) {
-        console.log(err);
     }
  });
 }
@@ -23,7 +22,7 @@ function renderHomePage(donutStores) {
 
 function donutCard(donutStore) {
  return `<div class = "card" style= "width: 18rem;">
-        <img class = "card-img-top" src = "${donutStore.photo_reference}" alt = "test">
+        <img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "test">
         <div class = "card-body">
             <h5 class = "card-title">${donutStore.name}</h5>
         </div>

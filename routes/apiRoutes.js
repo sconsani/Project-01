@@ -4,7 +4,7 @@ const db = require("../models");
 const ctrl = require("../controllers");
 
 // GET DonutStores Index
-router.get("/donutStores", ctrl.donutStoresCtrl.index);
+router.get("/donutstores", ctrl.donutStoresCtrl.index);
 
 // GET Bucketlists Index
 router.get("/bucketlist", ctrl.bucketlistsCtrl.index);
