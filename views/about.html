@@ -1,29 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="../public/styles/about.css">
-	<!-- Main JS -->
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-	<title>About Us</title>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles/about.css">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+   <!-- VENDOR SCRIPTS -->
+    <script defer src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <!-- Main JS -->
+  <script defer src="/scripts/donutStoresIndex.js"></script>
+
+  <title>About Us</title>
 </head>
 
+  <header>
+     <nav class="navbar navbar-expand-md navbar-dark bg-info pt-0 pb-0 pl-0 pr-0 mr-0 mr-l-0">
+        <div class="container">
+
+          <a class="navbar-brand" href="/"><img id = "blue-donut" src="images/nav-blue-donut.png" alt="donut image" height = "100" width = "100"></a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/bucketlist">My Bucketlist</a>
+              </li>
+              <!--  <li class="nav-item">
+                <a class="nav-link" href="">LOGIN</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="">SIGNUP</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+  
 <body>
-<header>
-	 <nav class="navbar navbar-expand-md navbar-dark bg-success pt-3 pb-3">
-      <div class="container">
-        <a class="navbar-brand" href="/">Doughnit</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-
-<h1>About Us</h1>
-</header>
-
+<div class = "card-wrapper" style = "max-width: 1250; margin-left: 20px;margin-right: 20px;">
+  
+  <h1>ABOUT US</h1>
+<div class="container">
+  <div class="row">
+    <div class="col bg-light mr-5" style = "text-align: center;">
+      <img id = "blue-donut" src="images/nav-blue-donut.png" alt="donut image" height = "160" width = "160">
+      <h3>Laura Sack</h3>
+      <p>about me!</p>
+    </div>
+    <div class="col bg-dark ml-5 text-light" style = "text-align: center;">
+      <img id = "blue-donut" src="images/nav-blue-donut.png" alt="donut image" height = "160" width = "160">
+      <h3>Sammy Consani</h3>
+      <p>about me!</p>
+    </div>
+  </div>
 
 
   <!-- Bootstrap JS -->
@@ -32,9 +69,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
-<footer>
-	<h3>copywrite info</h3>
-		<!-- <a class="nav-link" href="/about">About Us</a> -->
+<footer id = "sticky-footer" class = "page-footer font-small bg-info pt-3">
+  <div class = "container-fluid">
+    <div class = "row ">
+      <div class = "col-md mt-md-0 mt-3 mb-3">
+    <a href="/about" class="text-white align-middle ">About Us</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 </html>
