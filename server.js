@@ -10,9 +10,6 @@ const PORT = process.env.PORT || 4000;
 const db = require("./models")
 console.log("Db in server.js", db);
 
-// Init Route
-app.get("/", (req, res) => res.send(`<h1>DOUGHNIT</h1>`));
-
 // Routes
 const routes = require("./routes");
 
@@ -23,6 +20,7 @@ app.use(express.static(`${__dirname}/public`));
 
 // BodyParser - Make Request Data Available on req.body
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 // HTML ROUTES

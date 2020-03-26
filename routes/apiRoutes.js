@@ -7,15 +7,15 @@ const ctrl = require("../controllers");
 router.get("/donutStores", ctrl.donutStoresCtrl.index);
 
 // GET Bucketlists Index
-router.get("/bucketlists", ctrl.bucketlistsCtrl.index);
+router.get("/bucketlist", ctrl.bucketlistsCtrl.index);
 
 // POST Bucketlists Create
-router.post("/bucketlists", ctrl.bucketlistsCtrl.create);
+router.post("/bucketlist", ctrl.bucketlistsCtrl.create);
 
 // PUT Bucketlists Update
-// router.put("/bucketlists", ctrl.bucketlistsCtrl.update);
+router.put("/bucketlist/:bucketlistId", ctrl.bucketlistsCtrl.update);
 
 // DELETE Bucketlists
-
+router.delete("/bucketlist/:bucketlistId", ctrl.bucketlistsCtrl.remove);
 
 module.exports = router;
