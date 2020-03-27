@@ -117,7 +117,8 @@ const remove = (req, res) => {
         }
     
         for (let i = foundBucketlist.bucketlist.length -1; i >= 0; i--) {
-            if (i === foundDonutStore) {
+            if (foundBucketlist.bucketlist[i].id === foundDonutStore.id) {
+                console.log("Console logging foundBucketlist", foundBucketlist);
                 foundBucketlist.bucketlist.splice(i, 1);
             }
         }
@@ -128,17 +129,17 @@ const remove = (req, res) => {
             res.json(savedBucketlist);
             })
 
-        for (let i = foundDonutStore.bucketlists.length - 1; i >= 0; i--) {
-            if(i === foundBucketlist) {
-                foundDonutStore.bucketlists.splice(i, 1);
-            }
-        }    
-        foundDonutStore.save((err, savedDonutStore) => {
-            if (err) {
-                return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-            }
-            res.json(savedDonutStore);
-            })
+        // for (let i = foundDonutStore.bucketlists.length - 1; i >= 0; i--) {
+        //     if(i === foundBucketlist) {
+        //         foundDonutStore.bucketlists.splice(i, 1);
+        //     }
+        // }    
+        // foundDonutStore.save((err, savedDonutStore) => {
+        //     if (err) {
+        //         return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        //     }
+        //     res.json(savedDonutStore);
+        //     })
         })
 
      })
