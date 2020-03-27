@@ -17,7 +17,7 @@ $(document).ready(function(){
 function renderHomePage(donutStores) {
     donutStores.forEach((donutStore) => {
         $(".card-deck").append(`${donutCard(donutStore)}`);
-    });
+    })
 };
 
 function donutCard(donutStore) {
@@ -38,5 +38,6 @@ function donutCard(donutStore) {
  </div>
         `;
 }
+
 getDonutStores();
 });
