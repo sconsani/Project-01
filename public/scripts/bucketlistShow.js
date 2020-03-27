@@ -1,8 +1,9 @@
 console.log("Sanity Check- bucket list show");
 
+let userName = window.location.pathname.split('/')[2];
+
 $(document).ready(function() {
 	
-	let userName = window.location.pathname.split('/')[2];
 	console.log(userName);
 
 	// let userName = document.getElementById("username").value;
@@ -19,13 +20,19 @@ $(document).ready(function() {
     });
 });
 
-function renderBucketlist(donutStore) {
-    $("#left-column").append(`${donutCard(donutStore)}`)
-    $(".nameHone").append('<h1>${userName}</h1>');
+
+function renderBucketlist(bucketlist) {
+	$(".nameHone").append(`<h1>${userName}'s Bucketlist</h1>`);
+
+	// console.log("testing");
+	bucketlist.bucketlist.forEach(donutStore => {
+		$("#left-column").append(`${donutCard(donutStore)}`)
+	});
     };
 
 
 function donutCard(donutStore) {
+
 return `<div class = "card" style= "width: 18rem;">
 <img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "test">
 <div class = "card-body">
