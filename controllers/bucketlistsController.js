@@ -1,13 +1,13 @@
 const db = require("../models");
 
-const index = (req, res) => {
-    db.Bucketlist.find({}, (err, allBucketLists) => {
-        if (err) {
-            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-        }
-        res.json(allBucketLists);
-    });
-};
+// const index = (req, res) => {
+//     db.Bucketlist.find({}, (err, allBucketLists) => {
+//         if (err) {
+//             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+//         }
+//         res.json(allBucketLists);
+//     });
+// };
 
 const signup = (req, res) => {
     db.Bucketlist.findOne({userName: req.body.userName}, (err, foundBucketlist) => {
@@ -23,7 +23,7 @@ const signup = (req, res) => {
             }
             res.status(201).json(newBucketlist);
         })
-    });
+    })
 };
 
 const show = (req, res) => {
@@ -38,53 +38,94 @@ const show = (req, res) => {
         res.json(foundBucketlist);
     })
     
-}
-
-// db.DonutStore.findById(req.params.donutStoreId, (err, foundDonutStore) => {
-//     if (err) {
-//         return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-//     }
-    
-//     // Add DonutStore to Bucketlist
-//     newBucketlist.bucketlist.push(foundDonutStore);
-
-//     // Save Modififed Bucketlist
-//     newBucketlist.save((err, savedBucketlist) => {
-//         if (err) {
-//             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-//         }
-//         res.json(newBucketlist);
-//     })
-// })
-
-    // db.Bucketlist.findByIdAndUpdate(req.params.bucketlistId, req.body, {new: true}, (err, updatedBucketlist) => {
-    //     if (err) {
-    //         return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-    //     }
-    //     res.json(updatedBucketlist);
-    // });
-
-const update = (req, res) => {
-
-
-    // get DonutStore object 
-    // update Bucketlist by pushing store into bucketlist array
-    // also update DonutStore object bucketlist array
 };
 
-const remove = (req, res) => {
-    db.Bucketlist.findByIdAndDelete(req.params.bucketlistId, (err, deletedBucketlist) => {
+// Delete me when done testing
+const update = (req, res) => {
+    db.Bucketlist.findByIdAndUpdate(req.params.bucketlistId, req.body, {new: true}, (err, updatedBucketlist) => {
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
-        res.json(deletedBucketlist);
-    });
+        res.json(updatedBucketlist);
+    })
+};
+
+const addToBucketlist = (req, res) => {
+    db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
+    
+    db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
+
+        foundBucketlist.bucketlist.push(foundDonutStore);
+
+        foundBucketlist.save((err, savedBucketlist) => {
+            if (err) {
+                return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+            }
+            res.json(savedBucketlist);
+            })
+    
+        foundDonutStore.bucketlists.push(foundBucketlist);
+
+        foundDonutStore.save((err, savedDonutStore) => {
+            if (err) {
+                return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+            }
+            res.json(savedDonutStore);
+            })
+        })
+    })
+};
+
+const remove = (req, res) => {
+    db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
+
+    db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
+    
+        for (let i = foundBucketlist.bucketlist.length -1; i >= 0; i--) {
+            if (i === foundDonutStore) {
+                foundBucketlist.bucketlist.splice(i, 1);
+            }
+        }
+        foundBucketlist.save((err, savedBucketlist) => {
+            if (err) {
+                return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+            }
+            res.json(savedBucketlist);
+            })
+
+        for (let i = foundDonutStore.bucketlists.length - 1; i >= 0; i--) {
+            if(i === foundBucketlist) {
+                foundDonutStore.bucketlists.splice(i, 1);
+            }
+        }    
+        foundDonutStore.save((err, savedDonutStore) => {
+            if (err) {
+                return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+            }
+            res.json(savedDonutStore);
+            })
+        })
+
+     })
 };
 
 module.exports = {
-    index,
+    // index,
     signup,
     show,
-    update,
+    addToBucketlist,
     remove,
+    update,
 }
