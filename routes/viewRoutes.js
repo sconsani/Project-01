@@ -16,7 +16,7 @@ router.get("/about", (req, res) => {
 });
 
 // Bucketlist View
-router.get("/bucketlist", (req, res) => {
+router.get("/bucketlist/:userName", (req, res) => {
     res.sendFile("views/bucketlist.html", {
         root: __dirname + "/../",
     });

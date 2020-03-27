@@ -2,14 +2,13 @@
 console.log("Sanity check - bucketlistUpdate")
 
 $(document).ready(function() {
-    const addBtn = document.querySelector("add");
-    console.log(addBtn);
-    $(".add").on("click", function(event) {
-        event.preventDefault();
+
+    $(".card-deck").on("click", function(event) {
+        let addBtn = event.target;
+        // console.log("Console logging addBtn", addBtn);
         let donutStoreId = event.target.id;
-        let bucketlistId = document.getElementsByClassName("hiddenId").id;
-        console.log(bucketlistId);
-        console.log(donutStoreId);
+        // console.log("Console logging event", event);
+        let bucketlistId = document.getElementsByClassName("hiddenId")[0].id;
         addBtn.innerHTML = "Added";
         addBtn.style.color = "Gray";
         addBtn.disabled = true;
@@ -24,30 +23,32 @@ $(document).ready(function() {
         error: (err) => {
         console.log(err);
         }
-    }
+    });
+};
 
-
-function renderBucketlist(bucketlist) {
-    bucketlist.bucketlist.forEach(donutStore => {
-    $("#bucketlist").append(`${donutCard(donutStore)}`)
+function renderBucketlist(donutStore) {
+    $("#left-column").append(`${donutCard(donutStore)}`)
+    };
 
 
 function donutCard(donutStore) {
-`<div class = "card" style= "width: 18rem;">
-<img class = "card-img-top" src = "${DonutStore.photo.photo_reference}" alt = "test">
+return `<div class = "card" style= "width: 18rem;">
+<img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "test">
 <div class = "card-body">
-    <h5 class = "card-title">${DonutStore.name}</h5>
+    <h5 class = "card-title">${donutStore.name}</h5>
 </div>
 <ul class = "list-group list-group-flush">
-    <li class = "list-group-item">${DonutStore.formatted_address}</li>
-    <li class = "list-group-item">${DonutStore.rating}</li>
-    <li class = "list-group-item">${DonutStore.weekday_text}</li>
+    <li class = "list-group-item">${donutStore.formatted_address}</li>
+    <li class = "list-group-item">${donutStore.rating}</li>
+    <li class = "list-group-item">${donutStore.weekday_text}</li>
 </ul>
 <div class = "card-body">
 <button type="button" class="add btn btn-success position-absolute mid-center" id=${donutStore._id}>DOUGHNIT</button>
 <button type="button" class="add btn btn-dark position-absolute mid-center" id=${donutStore._id}>DOUGHNIT</button>
 </div>
 </div>
-`
+    `;
 }
 getBucketlist();
+    })
+});

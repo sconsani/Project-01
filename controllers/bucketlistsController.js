@@ -82,6 +82,29 @@ const addToBucketlist = (req, res) => {
     })
 };
 
+const addToVisited = (req, res) => {
+    db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
+    
+    db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
+
+        foundBucketlist.visitedStores.push(foundDonutStore);
+
+        foundBucketlist.save((err, savedBucketlist) => {
+            if (err) {
+                return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+            }
+            res.json(savedBucketlist);
+            })
+        })
+    })
+};
+
 const remove = (req, res) => {
     db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
         if (err) {
@@ -123,9 +146,10 @@ const remove = (req, res) => {
 
 module.exports = {
     // index,
+    update,
     signup,
     show,
     addToBucketlist,
+    addToVisited,
     remove,
-    update,
 }
