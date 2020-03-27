@@ -1,4 +1,4 @@
-console.log("Sanity check!");
+console.log("Sanity check -");
 
 $(document).ready(function(){
 
@@ -32,7 +32,7 @@ function donutCard(donutStore) {
             <li class = "list-group-item">${donutStore.rating}</li>
         </ul>
         <div class = "card-body">
-            <a href="#" class="btn btn-primary bg-danger position-absolute mid-center">Add to Bucketlist</a>
+            <button type="button" class="add btn btn-danger position-absolute mid-center" id=${donutStore._id}>Add to Bucketlist</button>
         </div>
         </div>
  </div>
