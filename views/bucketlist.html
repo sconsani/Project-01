@@ -5,39 +5,56 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="/styles/bucketlist.css">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
   <!-- Main JS -->
-  	<script defer src="/scripts/bucketlistShow.js"></script>
+  <script defer src="/scripts/donutStoresLogin.js"></script>
 	<script defer src="/scripts/bucketlistAdd.js"></script>
-	<script defer src="/scripts/bucketlistDelete.js"></script>
+  <script defer src="/scripts/bucketlistShow.js"></script>
+	<!-- <script defer src="/scripts/bucketlistDelete.js"></script> -->
+
+  <!-- VENDOR SCRIPTS -->
+    <script defer src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 	<title>My Bucketlist</title>
+
 </head>
 
 <body>
-	<header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-success pt-3 pb-3">
-       <div class="container">
-         <a class="navbar-brand" href="/">Doughnit</a>
+	 <header>
+     <nav class="navbar navbar-expand-md navbar-dark bg-info pt-0 pb-0 pl-0 pr-0 mr-0 mr-l-0">
+        <div class="container">
 
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
+          <a class="navbar-brand" href="/"><img id = "blue-donut" src="https://i.imgur.com/a8Fcg2d.png" alt="donut image" height = "100" width = "100"></a>
 
-         <div class="collapse navbar-collapse" id="navbarCollapse">
-           <ul class="navbar-nav ml-auto">
-             <li class="nav-item">
-               <a class="nav-link" href="/bucketlist.html">My Bucketlist</a>
-             </li>
-             </li>
-           </ul>
-         </div>
-       </div>
-     </nav>
- </header>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-<h1>My Bucketlist</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo cupiditate tempore magni harum vitae exercitationem cumque soluta! Rerum laboriosam vero expedita, at, quaerat a in doloremque saepe dolorum, nisi incidunt.
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <!-- <a class="nav-link" href="/bucketlist">My Bucketlist</a> -->
+              </li>
+              <!--  <li class="nav-item">
+                <a class="nav-link" href="">LOGIN</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="">SIGNUP</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </header>
+
+<div class= "nameHone">
+
+</div>
+
+<div style= "font-size: 20px; text-align: center;">
+<p>Welcome to your bucketlist! Click on "Doughnit" button when you've visited the store and can check it off your list!
 </p>
+</div>
 
 <div class="container">
   <div class="row">
@@ -97,6 +114,7 @@
     </div>
   </div>
 </div>
+</div>
 
 
   <!-- Bootstrap JS -->
@@ -105,9 +123,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
-<footer>
-	<h3>copywrite info</h3>
-		<!-- <a class="nav-link" href="/about">About Us</a> -->
+<footer class = "page-footer font-small bg-info pt-3">
+  <div class = "container-fluid">
+    <div class = "row ">
+      <div class = "col-md mt-md-0 mt-3 mb-3">
+    <a href="/about" class="text-white align-middle ">About Us</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 </html>
