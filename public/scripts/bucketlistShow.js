@@ -4,7 +4,6 @@ let userName = window.location.pathname.split('/')[2];
 
 $(document).ready(function() {
 	
-	console.log(userName);
 
 	// let userName = document.getElementById("username").value;
 
@@ -23,6 +22,7 @@ $(document).ready(function() {
 
 function renderBucketlist(bucketlist) {
 	$(".nameHone").append(`<h1>${userName}'s Bucketlist</h1>`);
+	$("header").append(`<p hidden class="hiddenId" id=${bucketlist._id}></p>`);
 
 	// console.log("testing");
 	bucketlist.bucketlist.forEach(donutStore => {
