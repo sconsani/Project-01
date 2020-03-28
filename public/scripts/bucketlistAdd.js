@@ -10,7 +10,8 @@ $(document).ready(function() {
         // console.log("Console logging event", event);
         let bucketlistId = document.getElementsByClassName("hiddenId")[0].id;
         addBtn.innerHTML = "Added";
-        addBtn.style.color = "Gray";
+        addBtn.style.backgroundColor = "Gray";
+        addBtn.style.color = "black"
         addBtn.disabled = true;
 
         // function getBucketlist() {

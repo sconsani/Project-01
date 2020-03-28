@@ -1,32 +1,32 @@
-console.log("Sanity Check- bucket list show");
+console.log("Sanity Check- bucket list VISITED");
 
-let userName = window.location.pathname.split('/')[2];
-
+//enter document.ready function
 $(document).ready(function() {
-	
+//on doughnit click
+	$(".doughnitbtn").on("click", function(event) {
+//enter ajax call
+		$.ajax({
+			//"GET" or "PUT"
+			//what is the correct route we are calling
+		        method: "PUT",
+		        url: `http://localhost:4000/api/v1/bucketlist/:bucketlistId/donutstores/:donutstoreId`;
+		        success: (success)=> {
+		            console.log(success);
+		            //renderVisited template
+		        },
+		        error: (err) => {
+		        console.log(err);
+		        }
+		    });
 
-	// let userName = document.getElementById("username").value;
-
-	 	$.ajax({
-	        method: "GET",
-	        url: `http://localhost:4000/api/v1/bucketlist/${userName}`,
-	        success: function(res) {
-	            renderBucketlist(res);
-	        },
-	        error: (err) => {
-	            console.log(err);
-	        },
-    });
-});
-
-
-function renderBucketlist(bucketlist) {
-	$(".nameHone").append(`<h1>${userName}'s Bucketlist:</h1>`);
+//on success
+function renderVisited(bucketlist) {
+	//do we need this again here too?
 	$("header").append(`<p hidden class="hiddenId" id=${bucketlist._id}></p>`);
 
-	// console.log("testing");
+	//for each donut store in bucketlist of user's bucketlist append the template (card)
 	bucketlist.bucketlist.forEach(donutStore => {
-		$("#left-column").append(`${donutCard(donutStore)}`)
+		$("#right-column").append(`${donutCard(donutStore)}`)
 	});
     };
 
@@ -34,8 +34,6 @@ function renderBucketlist(bucketlist) {
 function donutCard(donutStore) {
 
 return `<div class = "card mb-3" style= "min-width:15rem; max-width:15rem;">
-<button type="button" class="doughnitbtn close" id=${donutStore._id} aria-label="Close">x
-</button>
 <img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "donut image"
 style = "width: 100%; height: 15vw; object-fit: cover;">
 <div class = "card-body">
