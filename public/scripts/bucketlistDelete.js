@@ -1,22 +1,22 @@
-console.log("Sanity check!")
-// window variable to get Bucketlist.userName from URL
-// get DonutStore.Id from remove button
+console.log("Sanity check bucketlist delete")
 
-$document.ready(function() {
-    let deleteBtn = document.getElementById("delete-btn");
-    $("#delete-btn").on("click", function(event){
-        event.preventDefault();
-        $("#delete-btn").remove();
+$(document).ready(function() {
+    $("#left-column").on("click", function(event){
+        let donutStoreId = event.target.id;
+        console.log(event.target);
+        let bucketlistId = document.getElementsByClassName("hiddenId")[0].id;
         $.ajax({
         method: "DELETE",
-        url: "http://localhost:4000/api/v1/bucketlist/:bucketlistId/donutstores/:donutstoreId",
+        url: `http://localhost:4000/api/v1/bucketlist/${bucketlistId}/donutstores/${donutStoreId}`,
         success: onSuccess,
-        error: console.log("Something went wrong", err)
+        error: (err) => {
+            console.log(err);
+        }
         })
     })
 })
 
-// change 
-function onSuccess(bucketlist) {
-    $("#bucketlist").remove();
+// refresh the page 
+function onSuccess(delDonutStore) {
+    location.reload();
 };
