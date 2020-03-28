@@ -124,27 +124,33 @@ const remove = (req, res) => {
             }
         }
 
+        let delBucketlist;
         foundBucketlist.save((err, savedBucketlist) => {
             if (err) {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
             }
-            res.json(savedBucketlist);
-            })
+            delBucketlist = savedBucketlist;
+            console.log("logging delBucketlist", delBucketlist)
+            //res.json(savedBucketlist);
+            
         
+        console.log("delBucketlist outside of codeblock", delBucketlist)
         for (let i = foundDonutStore.bucketlists.length - 1; i >= 0; i--) {
             if(foundDonutStore.bucketlists[i] == delBucketlist.id) {
                 foundDonutStore.bucketlists.splice(i, 1);
             }
-        }    
+        }
+
+        console.log("delBucketlist before DonutStore save", delBucketlist)
         foundDonutStore.save((err, savedDonutStore) => {
             if (err) {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
             }
-            res.json(savedDonutStore);
+            res.json({delDonutStore: savedDonutStore, delBucketlist: delBucketlist});
             })
         })
-
-     })
+    })
+ })
 };
 
 module.exports = {
