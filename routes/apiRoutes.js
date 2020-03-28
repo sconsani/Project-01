@@ -20,7 +20,8 @@ router.get("/bucketlist/:userName", ctrl.bucketlistsCtrl.show);
 // update Bucketlist by pushing store into bucketlist array
 // also update DonutStore object bucketlist array
 router.put("/bucketlist/:bucketlistId", ctrl.bucketlistsCtrl.update);
-router.put("/bucketlist/:bucketlistId/donutstores/:donutstoreId", ctrl.bucketlistsCtrl.addToBucketlist);
+router.put("/bucketlist/:bucketlistId/donutstores/:donutstoreId", ctrl.bucketlistsCtrl.addTo);
+
 
 // DELETE Bucketlists
 // can use delete route for removing donutstore from bucketlist
