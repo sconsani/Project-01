@@ -10,6 +10,7 @@
 	<script defer src="/scripts/donutStoresLogin.js"></script>
 	<!-- <script defer src="/scripts/bucketlistAdd.js"></script> -->
 	<script defer src="/scripts/bucketlistShow.js"></script>
+  <script defer src="/scripts/bucketlistVisited.js"></script>
 	<script defer src="/scripts/bucketlistDelete.js"></script>
 
   <!-- VENDOR SCRIPTS -->
@@ -47,19 +48,19 @@
       </nav>
   </header>
 
-<div class= "nameHone">
 
-</div>
 
-<div style= "font-size: 20px; text-align: center;">
-<p>Welcome to your bucketlist! Click on "Doughnit" button when you've visited the store and can check it off your list!
+<div class = "m-3" style= "font-size: 20px; text-align: center;">
+<p>Welcome to your bucketlist! Keep track of your visited donut shops by clicking on the "Doughnit" button when you're ready to check it off your list!
 </p>
 </div>
 
 <div class="container">
   <div class="row">
   <div class="col-8">
-    <h3>Bucketlist</h3>
+    <div class= "nameHone">
+
+    </div>
     <div class="card-deck" id="left-column">
       <!-- <div class = "card" style= "width: 18rem;">
       	<img class = "card-img-top" src = "../public/images/pink-donut.jpg" alt = "test">
@@ -94,7 +95,7 @@
     </div>
   </div>
   <div class="col-4">
-    <h3>Been there, DOUGHN that!</h3>
+    <h1 class = "dougn">Been there, DOUGHN that!</h3>
     <div class="card-deck" id="right-column">
       <!-- <div class = "card" style= "width: 18rem;">
       	<img class = "card-img-top" src = "../public/images/pink-donut.jpg" alt = "test">
