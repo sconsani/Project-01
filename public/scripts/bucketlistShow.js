@@ -33,19 +33,23 @@ function renderBucketlist(bucketlist) {
 
 function donutCard(donutStore) {
 
-return `<div class = "card" style= "width: 18rem;">
-<img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "test">
+return `<div class = "card mb-3" style= "min-width:15rem; max-width:15rem;">
+<button type="button" class="close" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+<img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "donut image"
+style = "width: 100%; height: 15vw; object-fit: cover;">
 <div class = "card-body">
-    <h5 class = "card-title">${donutStore.name}</h5>
-</div>
+    <h5 class = "card-title mb-0">${donutStore.name}</h5>
 <ul class = "list-group list-group-flush">
     <li class = "list-group-item">${donutStore.formatted_address}</li>
     <li class = "list-group-item">${donutStore.rating}</li>
     <li class = "list-group-item">${donutStore.weekday_text}</li>
 </ul>
-<div class = "card-body">
-<button type="button" class="add btn btn-success position-absolute mid-center" id=${donutStore._id}>DOUGHNIT</button>
-<button type="button" class="add btn btn-dark position-absolute mid-center" id=${donutStore._id}>DOUGHNIT</button>
+	<div class = "card-body">
+	<button type="button" class="add btn btn-primary btn-sm btn-success position-absolute mid-center" id=${donutStore._id}>DOUGHNIT</button>
+	<button type="button" class="add btn btn-secondary btn-sm btn-outline-danger position-absolute mid-center" id=${donutStore._id}>Remove</button>
+	</div>
 </div>
 </div>
     `;
