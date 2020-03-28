@@ -1,40 +1,37 @@
-console.log("Sanity Check- bucket list show");
+console.log("Sanity Check- bucketlist show");
 
 let userName = window.location.pathname.split('/')[2];
 
 $(document).ready(function() {
 	
-
-	// let userName = document.getElementById("username").value;
-
 	 	$.ajax({
-	        method: "GET",
-	        url: `http://localhost:4000/api/v1/bucketlist/${userName}`,
-	        success: function(res) {
-	            renderBucketlist(res);
-	        },
-	        error: (err) => {
-	            console.log(err);
-	        },
+	    method: "GET",
+	    url: `http://localhost:4000/api/v1/bucketlist/${userName}`,
+	    success: function(res) {
+	        renderBucketlist(res);
+	    },
+	    error: (err) => {
+	        console.log(err);
+	    },
     });
 });
 
 
 function renderBucketlist(bucketlist) {
-	$(".nameHone").append(`<h1>${userName}'s Bucketlist:</h1>`);
+	$(".nameHome").append(`<h1>${userName}'s Bucketlist:</h1>`);
 	$("header").append(`<p hidden class="hiddenId" id=${bucketlist._id}></p>`);
 
 	// console.log("testing");
 	bucketlist.bucketlist.forEach(donutStore => {
 		$("#left-column").append(`${donutCard(donutStore)}`)
 	});
-    };
+};
 
 
 function donutCard(donutStore) {
 
 return `<div class = "card text-left mb-3" style= "min-width:15rem; max-width:15rem;">
-<button type="button" class="doughnitbtn close text-left ml-3 text-danger" id=${donutStore._id} aria-label="Close">x
+<button type="button" class="closeBtn close text-left ml-3 text-danger" id=${donutStore._id} aria-label="Close">x
 </button>
 <img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "donut image"
 style = "width: 100%; height: 15vw; object-fit: cover;">
@@ -46,9 +43,8 @@ style = "width: 100%; height: 15vw; object-fit: cover;">
 			    <li class = "list-group-item">${donutStore.weekday_text}</li>
 			</ul>
 		<div class = "card-body">
-		    <button type="button" class="add btn btn-primary btn-sm btn-success position-relative mid-center btn-block" style = "font-family: 'Fredoka One', cursive;" id=${donutStore._id}>DOUGHNIT!</button>
+		    <button type="button" class="doughnitBtn btn btn-primary btn-sm btn-success position-relative mid-center btn-block" id=${donutStore._id}>DOUGHNIT!</button>
 		</div>
-
 	</div>
 </div>
     `;

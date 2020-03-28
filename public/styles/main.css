@@ -1,9 +1,9 @@
 
-body{
+body {
 	background-color: orange;
 	color: black;
 	margin-bottom: 50px;
-	/*font-family: 'Fredoka One', cursive;*/
+	font-family: 'Lora';
 	/*font-size: 20px;*/
 	/*align-content: center;*/
 
@@ -23,6 +23,10 @@ body{
 h1 {
 	font-family: 'Fredoka One', cursive;
 	text-align: center;
+};
+
+button {
+	font-family: 'Fredoka One', cursive;
 };
 
 

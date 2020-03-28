@@ -16,8 +16,6 @@ $(document).ready(function() {
     })
 })
 
-// refresh the page 
-function onSuccess(delDonutStore) {
-    // location.reload();
-    render();
+function onSuccess() {
+    location.reload();
 };

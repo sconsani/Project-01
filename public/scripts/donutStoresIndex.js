@@ -9,7 +9,8 @@ $(document).ready(function(){
     success: function(res) {
         renderHomePage(res);
     },
-    error: function(err) {
+    error: (err) => {
+        console.log(err);
     }
  });
 }
@@ -38,6 +39,5 @@ function donutCard(donutStore) {
  </div>
         `;
 }
-
 getDonutStores();
 });
