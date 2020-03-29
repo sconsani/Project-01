@@ -1,36 +1,35 @@
-console.log("Sanity Check- bucket list VISITED");
+console.log("Sanity Check - bucketlist VISITED");
 
-//enter document.ready function
-$(document).ready(function() {
-//on doughnit click
-	$(".doughnitbtn").on("click", function(event) {
-//enter ajax call
+let doughnitBtn;
+	$("#left-column").on("click", function(event) {
+	// $("#doughnitBtn").on("click", function(event) {
+        doughnitBtn = event.target;
+        // console.log("Console logging doughnit button", doughnitBtn);
+        let donutStoreId = event.target.id;
+		let bucketlistId = document.getElementsByClassName("hiddenId")[0].id;
+
 		$.ajax({
-			//"GET" or "PUT"
-			//what is the correct route we are calling
-		        method: "PUT",
-		        url: `http://localhost:4000/api/v1/bucketlist/:bucketlistId/donutstores/:donutstoreId`;
-		        success: function(res) {
-		        	renderVisited(res);
-		        },
-		        error: (err) => {
-		        console.log(err);
-		        }
-		    });
-
-//on success - //is this bucketlist again here?
-function renderVisited(bucketlist) {
-	//appending secret id again to reference
-	$("header").append(`<p hidden class="hiddenId" id=${bucketlist._id}></p>`);
-
-	//for each donut store in bucketlist of user's bucketlist append the template (card)
-	bucketlist.bucketlist.forEach(donutStore => {
-		$("#right-column").append(`${donutCard(donutStore)}`)
+		method: "GET",
+		url: `http://localhost:4000/api/v1/bucketlist/${bucketlistId}/donutstores/${donutStoreId}`,
+		success: function(res) {
+			renderStores(res);
+		},
+		error: (err) => {
+			console.log(err);
+		}
+		});	
 	});
-    };
 
 
-function donutCard(donutStore) {
+
+function renderStores(donutStore) {
+	doughnitBtn.style.backgroundColor = "Gray";
+	doughnitBtn.style.color = "black"
+	doughnitBtn.disabled = true;
+	$("#right-column").append(`${donutCardVisited(donutStore)}`);
+};
+
+function donutCardVisited(donutStore) {
 
 return `<div class = "card mb-3" style= "min-width:15rem; max-width:15rem;">
 <img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "donut image"

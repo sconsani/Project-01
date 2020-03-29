@@ -23,4 +23,3 @@ function onSuccess(bucketlist) {
     $("form").remove();
     
 };
-

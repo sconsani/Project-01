@@ -15,6 +15,10 @@ router.post("/bucketlist", ctrl.bucketlistsCtrl.signup);
 router.get("/bucketlist", ctrl.bucketlistsCtrl.index);
 router.get("/bucketlist/:userName", ctrl.bucketlistsCtrl.show);
 
+// look back at vampires hw/documentation - use $in
+// router.get("/bucketlist/:Id/:visitedStores", ctrl.bucketlistsCtrl.addToVisited);
+router.get("/bucketlist/:bucketlistId/donutstores/:donutstoreId", ctrl.bucketlistsCtrl.addToVisited);
+
 // PUT Bucketlists Update (add to bucketlist)
 // get DonutStore object 
 // update Bucketlist by pushing store into bucketlist array
@@ -22,9 +26,10 @@ router.get("/bucketlist/:userName", ctrl.bucketlistsCtrl.show);
 router.put("/bucketlist/:bucketlistId", ctrl.bucketlistsCtrl.update);
 router.put("/bucketlist/:bucketlistId/donutstores/:donutstoreId", ctrl.bucketlistsCtrl.addToBucketlist);
 
+
 // DELETE Bucketlists
 // can use delete route for removing donutstore from bucketlist
-// router.delete("/bucketlist/:bucketlistId", ctrl.bucketlistsCtrl.remove);
+router.delete("/bucketlist/:bucketlistId", ctrl.bucketlistsCtrl.deleteBucketlist);
 router.delete("/bucketlist/:bucketlistId/donutstores/:donutstoreId", ctrl.bucketlistsCtrl.remove);
 
 

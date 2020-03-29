@@ -21,7 +21,7 @@ function renderHomePage(donutStores) {
 };
 
 function donutCard(donutStore) {
- return `<div class = "card mb-3" style= "min-width:15rem; max-width:15rem;">
+    return `<div class = "card mb-3" style= "min-width:15rem; max-width:15rem;">
         <img class = "card-img-top" src = "${donutStore.photo.photo_reference}" alt = "donut image" style = "width: 100%;
     height: 15vw; object-fit: cover;">
         <div class = "card-body">

@@ -52,6 +52,7 @@ const update = (req, res) => {
 };
 
 const addToBucketlist = (req, res) => {
+    debugger;
     db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
@@ -71,9 +72,9 @@ const addToBucketlist = (req, res) => {
             }
             updatedBucketlist = savedBucketlist;
             })
-    
-        foundDonutStore.bucketlists.push(foundBucketlist.id);
 
+        foundDonutStore.bucketlists.push(foundBucketlist.id);
+        
         foundDonutStore.save((err, savedDonutStore) => {
             if (err) {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
@@ -84,36 +85,52 @@ const addToBucketlist = (req, res) => {
     })
 };
 
-// const addToVisited = (req, res) => {
-//     db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
-//         if (err) {
-//             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-//         }
-    
-//     db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
-//         if (err) {
-//             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-//         }
+const addToVisited = (req, res) => {
+    debugger;
+    db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
+        console.log("logging foundDonutStore", foundDonutStore);
 
-//         foundBucketlist.visitedStores.push(foundDonutStore);
+    db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
 
-//         foundBucketlist.save((err, savedBucketlist) => {
-//             if (err) {
-//                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-//             }
-//             res.json(savedBucketlist);
-//             })
-//         })
-//     })
-// };
+        foundBucketlist.visitedStores.push(foundDonutStore);
+
+        foundBucketlist.save((err, savedBucketlist) => {
+            if (err) {
+                return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+            }
+            res.json(foundDonutStore);
+            })
+        })
+    })
+};
+
+const deleteBucketlist = (req, res) =>{
+    db.Bucketlist.findByIdAndDelete(req.params.bucketlistId, (err, foundBucketlist) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
+        res.json(foundBucketlist);
+    })
+};
 
 const remove = (req, res) => {
     db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
+        console.log("first found donutstore", foundDonutStore);
+
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
 
     db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
+        debugger;
+        console.log("logging foundbucketlist", foundBucketlist);
+        console.log("logging donutstore", foundDonutStore);
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
@@ -131,9 +148,7 @@ const remove = (req, res) => {
             }
             delBucketlist = savedBucketlist;
             console.log("logging delBucketlist", delBucketlist)
-            //res.json(savedBucketlist);
             
-        
         console.log("delBucketlist outside of codeblock", delBucketlist)
         for (let i = foundDonutStore.bucketlists.length - 1; i >= 0; i--) {
             if(foundDonutStore.bucketlists[i] == delBucketlist.id) {
@@ -154,12 +169,12 @@ const remove = (req, res) => {
 };
 
 module.exports = {
-    // Delete me after testing
-    index,
-    // Delete me after testing
-    update,
+    index, // Delete me after testing
+    update, // Delete me after testing
     signup,
     show,
     addToBucketlist,
+    addToVisited,
     remove,
+    deleteBucketlist,
 }
