@@ -52,6 +52,7 @@ const update = (req, res) => {
 };
 
 const addToBucketlist = (req, res) => {
+    debugger;
     db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
@@ -85,6 +86,7 @@ const addToBucketlist = (req, res) => {
 };
 
 const addToVisited = (req, res) => {
+    debugger;
     db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
@@ -96,26 +98,39 @@ const addToVisited = (req, res) => {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
 
-        console.log("logging foundBucketlist", foundBucketlist);
         foundBucketlist.visitedStores.push(foundDonutStore);
 
         foundBucketlist.save((err, savedBucketlist) => {
             if (err) {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
             }
-            res.json(savedBucketlist);
+            res.json(foundDonutStore);
             })
         })
     })
 };
 
+const deleteBucketlist = (req, res) =>{
+    db.Bucketlist.findByIdAndDelete(req.params.bucketlistId, (err, foundBucketlist) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
+        res.json(foundBucketlist);
+    })
+};
+
 const remove = (req, res) => {
     db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
+        console.log("first found donutstore", foundDonutStore);
+
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
 
     db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
+        debugger;
+        console.log("logging foundbucketlist", foundBucketlist);
+        console.log("logging donutstore", foundDonutStore);
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
@@ -161,4 +176,5 @@ module.exports = {
     addToBucketlist,
     addToVisited,
     remove,
+    deleteBucketlist,
 }

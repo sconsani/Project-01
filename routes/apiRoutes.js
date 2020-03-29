@@ -29,7 +29,7 @@ router.put("/bucketlist/:bucketlistId/donutstores/:donutstoreId", ctrl.bucketlis
 
 // DELETE Bucketlists
 // can use delete route for removing donutstore from bucketlist
-// router.delete("/bucketlist/:bucketlistId", ctrl.bucketlistsCtrl.remove);
+router.delete("/bucketlist/:bucketlistId", ctrl.bucketlistsCtrl.deleteBucketlist);
 router.delete("/bucketlist/:bucketlistId/donutstores/:donutstoreId", ctrl.bucketlistsCtrl.remove);
 
 

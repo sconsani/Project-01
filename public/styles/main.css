@@ -1,18 +1,11 @@
-
-body {
+body{
 	background-color: orange;
 	color: black;
 	margin-bottom: 50px;
-	font-family: 'Lora';
+	/*font-family: 'Fredoka One', cursive;*/
 	/*font-size: 20px;*/
 	/*align-content: center;*/
 
-};
-
-
-#add-button {
-	background-color: red;
-	
 };
 
 #blue-donut{
@@ -25,7 +18,20 @@ h1 {
 	text-align: center;
 };
 
+/* below don't work */
 button {
+	font-family: 'Fredoka One', cursive;
+};
+
+/* .add {
+	font-family: 'Fredoka One', cursive;
+};
+
+.sign-in {
+	font-family: 'Fredoka One', cursive;
+}; */
+
+.nav-link {
 	font-family: 'Fredoka One', cursive;
 };
 
@@ -48,7 +54,6 @@ button {
 	border-color: red;
 	border-width: 3px;
 	height: 50px;
-
 }; */
 
 /* .container {
@@ -56,12 +61,3 @@ button {
 	padding-right: 15px;
 	padding-left: 15px;
 }; */
-
-
-
-
-
-
-
-
-

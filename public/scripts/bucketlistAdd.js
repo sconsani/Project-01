@@ -1,5 +1,5 @@
 // need to handle adding stores to bucketlist, removing stores from bucketlist, and dougnnit
-console.log("Sanity check - bucketlistUpdate")
+console.log("Sanity check - bucketlist ADD")
 
 $(document).ready(function() {
 
