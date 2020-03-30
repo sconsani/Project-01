@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const DB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/doughnit";
+// const DB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/doughnit";
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost:27017/doughnit" );
 
 mongoose.connect(DB_URI, {
     useNewUrlParser: true,
