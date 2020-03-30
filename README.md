@@ -49,8 +49,8 @@ https://github.com/sconsani/Project-01
 ![ERD](https://i.imgur.com/81434fZ.png)
 
 #### Roadmap
-Checkout our future plans for DOUGHNIT! here: [link to Trello!] (https://trello.com/invite/b/bZRM3ZzG/21a5879dd46116db43430e2ccd8c7484/doughnit-user-stories)
-
+Checkout our future plans for DOUGHNIT! here: 
+[link to Trello!](https://trello.com/invite/b/bZRM3ZzG/21a5879dd46116db43430e2ccd8c7484/doughnit-user-stories)
 
 ##### References
 These sources helped make DOUGHNIT! a reality:
