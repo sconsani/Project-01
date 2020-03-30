@@ -33,20 +33,14 @@ https://github.com/sconsani/Project-01
 * If the user clicks "DOUGHNIT", gray out and disable the button, add the donut store card to the right side column and change the button to "You've doughnit!" text
 
 ### Wireframes
-![Wireframes]
-(https://i.imgur.com/zBUxcyb.png)
-![Wireframes]
-(https://i.imgur.com/AKudXeS.png)
-![Wireframes]
-(https://i.imgur.com/NenuIpb.png)
-![Wireframes]
-(https://i.imgur.com/6Z7dNiU.png)
-![Wireframes]
-(https://i.imgur.com/1vfDDgk.png)
+![Wireframes](https://i.imgur.com/zBUxcyb.png)
+![Wireframes](https://i.imgur.com/AKudXeS.png)
+![Wireframes](https://i.imgur.com/NenuIpb.png)
+![Wireframes](https://i.imgur.com/6Z7dNiU.png)
+![Wireframes](https://i.imgur.com/1vfDDgk.png)
 
 ### ERD
-![ERD]
-(https://i.imgur.com/81434fZ.png)
+![ERD](https://i.imgur.com/81434fZ.png)
 
 #### Roadmap
 Checkout our future plans for DOUGHNIT! here: [link to Trello!] (https://trello.com/invite/b/bZRM3ZzG/21a5879dd46116db43430e2ccd8c7484/doughnit-user-stories)
