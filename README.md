@@ -34,19 +34,19 @@ https://github.com/sconsani/Project-01
 
 ### Wireframes
 ![Wireframes]
-(wireframes/homepage-wireframe-2.png)
+(https://i.imgur.com/zBUxcyb.png)
 ![Wireframes]
-(wireframes/login-default-wireframe.png)
+(https://i.imgur.com/AKudXeS.png)
 ![Wireframes]
-(wireframes/signup-default-wireframe-2.png)
+(https://i.imgur.com/NenuIpb.png)
 ![Wireframes]
-(wireframes/my-bucketlist-wireframe.png)
+(https://i.imgur.com/6Z7dNiU.png)
 ![Wireframes]
-(wireframes/about-us-wireframe-2.png)
+(https://i.imgur.com/1vfDDgk.png)
 
 ### ERD
 ![ERD]
-(https://www.lucidchart.com/documents/view/9a5be0df-1291-42e9-b82e-9451857f842d/0_0)
+(https://i.imgur.com/81434fZ.png)
 
 #### Roadmap
 Checkout our future plans for DOUGHNIT! here: [link to Trello!] (https://trello.com/invite/b/bZRM3ZzG/21a5879dd46116db43430e2ccd8c7484/doughnit-user-stories)
