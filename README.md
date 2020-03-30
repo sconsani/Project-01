@@ -10,19 +10,19 @@ https://github.com/sconsani/Project-01
 
 ### User Stories
 
-###### Site Page Load
+##### Site Page Load
 * When a user visits doughnit.herokuapp.com, display these components:
     * Header
     * Navbar
     * Gallery of donut stores
     * Footer
 
-###### Adding Donut Stores
-*If the user is signed-in and clicks "Add to bucketlist" on a gallery store card:
+##### Adding Donut Stores
+* If the user is signed-in and clicks "Add to bucketlist" on a gallery store card:
     * Add the donut store to the user's bucketlist
     * Add the bucketlist to the donutstore's counter of times bucketlisted
 
-###### 
+##### 
 * When a user clicks "Bucketlist" in the navbar:
 * Load a new page with two columns: "*Username*'s Bucketlist:" and "Been there, DOUGHN that!"
 * Display donut store cards the user has added to their bucketlist on the left side
@@ -33,10 +33,15 @@ https://github.com/sconsani/Project-01
 * If the user clicks "DOUGHNIT", gray out and disable the button, add the donut store card to the right side column and change the button to "You've doughnit!" text
 
 ### Wireframes
+##### Homepage
 ![Wireframes](https://i.imgur.com/zBUxcyb.png)
+##### Signup
 ![Wireframes](https://i.imgur.com/AKudXeS.png)
+##### Login
 ![Wireframes](https://i.imgur.com/NenuIpb.png)
+##### Bucketlist
 ![Wireframes](https://i.imgur.com/6Z7dNiU.png)
+##### About
 ![Wireframes](https://i.imgur.com/1vfDDgk.png)
 
 ### ERD
