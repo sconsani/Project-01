@@ -1,0 +1,17 @@
+body{
+	background-image: url("https://images.unsplash.com/photo-1529767367174-535729449d71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+	background-size: cover;
+	color: black;
+	margin-bottom: 50px;
+	font-family: 'Raleway';
+};
+
+#blue-donut{
+	width: 10%;
+	height: auto;
+}
+
+h1 {
+	font-family: 'Fredoka One', cursive;
+	text-align: center;
+};
