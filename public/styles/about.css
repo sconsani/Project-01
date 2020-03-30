@@ -6,6 +6,7 @@ body{
     background-size: cover;
 	color: black;
 	margin-bottom: 50px;
+	/* position: relative; */
 	/*font-family: 'Fredoka One', cursive;*/
 	/*font-size: 20px;*/
 	/*align-content: center;*/
@@ -22,9 +23,20 @@ h1 {
 	text-align: center;
 };
 
-#sticky-footer {
+/* #sticky-footer {
   flex-shrink: 0;
-};
+  font-family: 'Fredoka One', cursive;
+}; */
+
+/* footer {
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: red;
+	color: white;
+	text-align: left;
+} */
 
 
 

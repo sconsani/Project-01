@@ -206,6 +206,21 @@ db.DonutStore.insertMany(newDonutStore, (err, donutStore) => {
     }
 });
 
+const newBucketlist: [
+    {}
+];
+
+db.Bucketlist.insertMany(newBucketlist, (err, bucketlist) => {
+    if (err) {
+        console.log(err);
+        process.exit();
+    }
+    else {
+        console.log("Created new bucketlist", bucketlist);
+        process.exit();
+    }
+});
+
 // db.DonutStore.deleteMany({}, (err, result) => {
 // 	if (err) {
 // 		console.log(err);
