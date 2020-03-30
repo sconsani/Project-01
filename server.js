@@ -30,4 +30,4 @@ app.use("/", routes.views);
 app.use("/api/v1/", routes.api);
 
 // START SERVER
-app.listen(PORT, () => console.log(`Server running at local host 4000`));
+app.listen(process.env.PORT || 3000)
