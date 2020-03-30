@@ -6,10 +6,8 @@ const index = (req, res) => {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
         res.json(allDonutStores);
-    });
+    })
 };
-
-
 
 module.exports = {
     index,

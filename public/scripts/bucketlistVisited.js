@@ -2,7 +2,7 @@ console.log("Sanity Check - bucketlist VISITED");
 
 let doughnitBtn;
 	$("#left-column").on("click", function(event) {
-	// $("#doughnitBtn").on("click", function(event) {
+        if (event.target.classList.contains("doughnitBtn")) {
         doughnitBtn = event.target;
         // console.log("Console logging doughnit button", doughnitBtn);
         let donutStoreId = event.target.id;
@@ -18,7 +18,8 @@ let doughnitBtn;
 			console.log(err);
 		}
 		});	
-	});
+	}	
+});
 
 
 
@@ -26,7 +27,7 @@ function renderStores(donutStore) {
 	doughnitBtn.style.backgroundColor = "Gray";
 	doughnitBtn.style.color = "black"
 	doughnitBtn.disabled = true;
-	$("#right-column").append(`${donutCardVisited(donutStore)}`);
+	$("#right-column").prepend(`${donutCardVisited(donutStore)}`);
 };
 
 function donutCardVisited(donutStore) {

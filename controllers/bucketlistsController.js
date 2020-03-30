@@ -1,13 +1,12 @@
 const db = require("../models");
 
-// Delete me when done testing
 const index = (req, res) => {
-    db.Bucketlist.find({}, (err, allBucketLists) => {
+    db.Bucketlist.find({}, (err, allBucketlists) => {
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
-        res.json(allBucketLists);
-    });
+        res.json(allBucketlists);
+    })
 };
 
 const signup = (req, res) => {
@@ -98,7 +97,7 @@ const addToVisited = (req, res) => {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
 
-        foundBucketlist.visitedStores.push(foundDonutStore);
+        foundBucketlist.visitedStores.unshift(foundDonutStore);
 
         foundBucketlist.save((err, savedBucketlist) => {
             if (err) {
@@ -162,6 +161,7 @@ const remove = (req, res) => {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
             }
             res.json({delDonutStore: savedDonutStore, delBucketlist: delBucketlist});
+            // res.json(savedDonutStore)
             })
         })
     })
@@ -169,7 +169,7 @@ const remove = (req, res) => {
 };
 
 module.exports = {
-    index, // Delete me after testing
+    index,
     update, // Delete me after testing
     signup,
     show,
