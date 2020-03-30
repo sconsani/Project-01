@@ -4,7 +4,6 @@ let doughnitBtn;
 	$("#left-column").on("click", function(event) {
         if (event.target.classList.contains("doughnitBtn")) {
         doughnitBtn = event.target;
-        // console.log("Console logging doughnit button", doughnitBtn);
         let donutStoreId = event.target.id;
 		let bucketlistId = document.getElementsByClassName("hiddenId")[0].id;
 
@@ -43,10 +42,10 @@ style = "width: 100%; height: 15vw; object-fit: cover;">
 			    <li class = "list-group-item">${donutStore.weekday_text}</li>
 			</ul>
 	    <div class = "card-body">
-			<h5 class = "card-title position-relative mid-center">You've Doughnit!</h5>
+			<h5 class = "font-weight-bold card-title position-relative mid-center">You've Doughnit!</h5>
 		</div>
 	</div>
 </div>
     `;
 };
-//note: im not sure what bootstrap class properties the new h5 tag needs for "you've doughnit" to get it centered until we see it
+

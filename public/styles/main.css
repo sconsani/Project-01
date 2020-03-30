@@ -1,11 +1,9 @@
 body{
-	background-color: orange;
+	background-image: url("https://images.unsplash.com/photo-1529767367174-535729449d71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+	background-size: cover;
 	color: black;
 	margin-bottom: 50px;
-	/*font-family: 'Fredoka One', cursive;*/
-	/*font-size: 20px;*/
-	/*align-content: center;*/
-
+	font-family: 'Raleway';
 };
 
 #blue-donut{
@@ -17,47 +15,3 @@ h1 {
 	font-family: 'Fredoka One', cursive;
 	text-align: center;
 };
-
-/* below don't work */
-button {
-	font-family: 'Fredoka One', cursive;
-};
-
-/* .add {
-	font-family: 'Fredoka One', cursive;
-};
-
-.sign-in {
-	font-family: 'Fredoka One', cursive;
-}; */
-
-.nav-link {
-	font-family: 'Fredoka One', cursive;
-};
-
-
-
-/*.card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
-};*/
-/* footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: pink;
-	color: white;
-	text-align: left;
-	font-size: 12px;
-	border-color: red;
-	border-width: 3px;
-	height: 50px;
-}; */
-
-/* .container {
-	width: 100%;
-	padding-right: 15px;
-	padding-left: 15px;
-}; */

@@ -6,8 +6,7 @@ const BucketlistSchema = new mongoose.Schema ({
     userName: String,
     favDonut: String,
     bucketlist: [DonutStore.schema],
-    // visited: Boolean, // if the entire bucketlist was visited
-    visitedStores: [DonutStore.schema], // if store id exists in list, it was visited
+    visitedStores: [DonutStore.schema],
 });
 
 const Bucketlist = mongoose.model("Bucketlist", BucketlistSchema);

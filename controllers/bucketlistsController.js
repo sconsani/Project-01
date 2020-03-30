@@ -1,14 +1,5 @@
 const db = require("../models");
 
-const index = (req, res) => {
-    db.Bucketlist.find({}, (err, allBucketlists) => {
-        if (err) {
-            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-        }
-        res.json(allBucketlists);
-    })
-};
-
 const signup = (req, res) => {
     db.Bucketlist.findOne({userName: req.body.userName}, (err, foundBucketlist) => {
         if (err) {
@@ -38,16 +29,6 @@ const show = (req, res) => {
         res.json(foundBucketlist);
     })
     
-};
-
-// Delete me when done testing
-const update = (req, res) => {
-    db.Bucketlist.findByIdAndUpdate(req.params.bucketlistId, req.body, {new: true}, (err, updatedBucketlist) => {
-        if (err) {
-            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-        }
-        res.json(updatedBucketlist);
-    })
 };
 
 const addToBucketlist = (req, res) => {
@@ -109,15 +90,6 @@ const addToVisited = (req, res) => {
     })
 };
 
-const deleteBucketlist = (req, res) =>{
-    db.Bucketlist.findByIdAndDelete(req.params.bucketlistId, (err, foundBucketlist) => {
-        if (err) {
-            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
-        }
-        res.json(foundBucketlist);
-    })
-};
-
 const remove = (req, res) => {
     db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
         console.log("first found donutstore", foundDonutStore);
@@ -161,7 +133,6 @@ const remove = (req, res) => {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
             }
             res.json({delDonutStore: savedDonutStore, delBucketlist: delBucketlist});
-            // res.json(savedDonutStore)
             })
         })
     })
@@ -169,12 +140,9 @@ const remove = (req, res) => {
 };
 
 module.exports = {
-    index,
-    update, // Delete me after testing
     signup,
     show,
     addToBucketlist,
     addToVisited,
     remove,
-    deleteBucketlist,
 }

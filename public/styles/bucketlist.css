@@ -1,41 +1,5 @@
 body {
     background-image: url("https://images.unsplash.com/photo-1525059337994-6f2a1311b4d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
 	background-size: cover;
-	font-family: 'Lora', serif;
+	font-family: 'Raleway', serif;
 };
-
-h1 {
-	font-family: 'Fredoka One', cursive;
-	text-align: left;
-}
-
-.doughn h1 {
-	font-family: 'Fredoka One', cursive;
-	text-align: right;
-};
-
-#blue-donut {
-	width: 10%;
-	height: auto;
-};
-
-.closeBtn {
-	font-family: 'Fredoka One', cursive;
-	text-align: right;
-};
-
-.doughnitBtn {
-	font-family: 'Fredoka One', cursive;
-	text-align: right;
-};
-
-/* this doesn't work */
-/* h1 {
-	font-family: 'Fredoka One', cursive;
-	text-align: left;
-};
-
-button {
-	font-family: 'Fredoka One', cursive;
-	text-align: left;
-}; */
