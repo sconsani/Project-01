@@ -24,7 +24,7 @@ https://github.com/sconsani/Project-01
     * Add the donut store to the user's bucketlist
     * Add the bucketlist to the donutstore's counter of times bucketlisted
 
-##### 
+##### Bucketlist Page
 * When a user clicks "Bucketlist" in the navbar:
 * Load a new page with two columns: "*Username*'s Bucketlist:" and "Been there, DOUGHN that!"
 * Display donut store cards the user has added to their bucketlist on the left side
@@ -50,8 +50,7 @@ https://github.com/sconsani/Project-01
 ![ERD](https://i.imgur.com/81434fZ.png)
 
 #### Roadmap
-Checkout our future plans for DOUGHNIT! here: 
-[link to Trello!](https://trello.com/invite/b/bZRM3ZzG/21a5879dd46116db43430e2ccd8c7484/doughnit-user-stories)
+Checkout our future plans for DOUGHNIT! [here.](https://trello.com/invite/b/bZRM3ZzG/21a5879dd46116db43430e2ccd8c7484/doughnit-user-stories)
 
 ##### References
 These sources helped make DOUGHNIT! a reality:
