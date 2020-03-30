@@ -29,7 +29,8 @@ function donutCard(donutStore) {
         <ul class = "list-group list-group-flush">
             <li class = "list-group-item">${donutStore.formatted_address}</li>
             <li class = "list-group-item">${donutStore.weekday_text}</li>
-            <li class = "list-group-item">${donutStore.rating}</li>
+            <li class = "list-group-item">Rating: ${donutStore.rating} <br></br>Times Added: ${donutStore.bucketlists.length}
+            </li>
         </ul>
         <div class = "card-body">
             <button type="button" class="add btn btn-danger position-relative mid-center" id=${donutStore._id}>Add to Bucketlist</button>

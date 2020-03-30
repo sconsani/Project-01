@@ -18,27 +18,19 @@ $(document).ready(function() {
 
 
 function renderBucketlist(bucketlist) {
-	$("#nameHome").append(`<h1>${userName}'s Bucketlist:</h1>`);
+	$("#nameHome").append(`<h1 id="name" style="font-family: 'Fredoka One', cursive;
+	text-align: left;">${userName}'s Bucketlist:</h1>`);
 	$("header").append(`<p hidden class="hiddenId" id=${bucketlist._id}></p>`);
 
 	console.log("testing");
 	bucketlist.bucketlist.forEach(donutStore => {
 		$("#left-column").append(`${donutCard(donutStore)}`)
 	});
-	// for testing event listener
-	// donutCard();
 	bucketlist.visitedStores.forEach(donutStore => {
 		$("#right-column").append(`${donutCardVisited(donutStore)}`)
 	});
 };
 
-// for testing even listener
-// function donutCard(donutStore) {
-// 	let button = document.createElement("BUTTON");
-// 	button.innerHTML = "click me";
-// 	button.className = "test"
-// 	document.body.appendChild(button);
-// }
 
 function donutCard(donutStore) {
 
