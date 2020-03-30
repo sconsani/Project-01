@@ -1,5 +1,14 @@
 const db = require("../models");
 
+const index = (req, res) => {
+    db.Bucketlist.find({}, (err, allBucketlists) => {
+        if (err) {
+            return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
+        }
+        res.json(allBucketlists);
+    })
+};
+
 const signup = (req, res) => {
     db.Bucketlist.findOne({userName: req.body.userName}, (err, foundBucketlist) => {
         if (err) {
@@ -160,6 +169,7 @@ const remove = (req, res) => {
 };
 
 module.exports = {
+    index,
     update, // Delete me after testing
     signup,
     show,

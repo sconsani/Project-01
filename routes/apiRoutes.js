@@ -6,14 +6,12 @@ const ctrl = require("../controllers");
 // GET DonutStores Index
 router.get("/donutstores", ctrl.donutStoresCtrl.index);
 
-// GET DonutStores Show (logged-in view)
-router.get("/donutstores/bucketlist/:userName", ctrl.donutStoresCtrl.backHome);
-
 // POST Bucketlist Sign-up (create)
 router.post("/bucketlist", ctrl.bucketlistsCtrl.signup);
 
 // GET Bucketlist Show (logged-in view)
 router.get("/bucketlist/:userName", ctrl.bucketlistsCtrl.show);
+router.get("/bucketlist", ctrl.bucketlistsCtrl.index);
 
 // GET Visited Stores
 router.get("/bucketlist/:bucketlistId/donutstores/:donutstoreId", ctrl.bucketlistsCtrl.addToVisited);

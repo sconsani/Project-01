@@ -195,6 +195,34 @@ const newDonutStore = [
     }
 ];
 
+
+const newBucketlist = [
+    {
+        userName: "Laura",
+        favDonut: "chocolate glazed",
+        bucketlist: [],
+        visitedStores: [],
+    },
+    {
+        userName: "Sammy",
+        favDonut: "sprinkled",
+        bucketlist: [],
+        visitedStores: [],
+    },
+    {
+        userName: "Charlie",
+        favDonut: "apple fritter",
+        bucketlist: [],
+        visitedStores: [],
+    },
+    {
+        userName: "David",
+        favDonut: "jelly donut",
+        bucketlist: [],
+        visitedStores: [],
+    }
+];
+
 db.DonutStore.insertMany(newDonutStore, (err, donutStore) => {
     if (err) {
         console.log(err);
@@ -205,10 +233,6 @@ db.DonutStore.insertMany(newDonutStore, (err, donutStore) => {
         process.exit();
     }
 });
-
-const newBucketlist: [
-    {}
-];
 
 db.Bucketlist.insertMany(newBucketlist, (err, bucketlist) => {
     if (err) {
@@ -226,7 +250,16 @@ db.Bucketlist.insertMany(newBucketlist, (err, bucketlist) => {
 // 		console.log(err);
 // 		process.exit();
 // 	}
-// 	console.log(`Successfully deleted ${result.deletedCount}`);
+// 	console.log(`Successfully deleted ${result.deletedCount} donut stores`);
+// 	process.exit();
+// });
+
+// db.Bucketlist.deleteMany({}, (err, result) => {
+// 	if (err) {
+// 		console.log(err);
+// 		process.exit();
+// 	}
+// 	console.log(`Successfully deleted ${result.deletedCount} bucketlists`);
 // 	process.exit();
 // });
 
