@@ -31,3 +31,4 @@ app.use("/api/v1/", routes.api);
 
 // START SERVER
 app.listen(process.env.PORT || 3000)
+// app.listen(PORT, () => console.log(`Server running at local host 4000`));

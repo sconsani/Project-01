@@ -1,6 +1,6 @@
 # project-01
 
-## :doughnut: DOUGHNIT:doughnut:!
+## :doughnut: DOUGHNIT :doughnut:!
 ![Donut Corgi](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiNC1ltz6EHeyDdnXiNmrISZeUwmaRxXtyYNA8PoltAYZZsfNH)
 
 [DOUGHNIT here]()
