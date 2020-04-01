@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const DonutStore = require("./DonutStore");
+const DonutStore = require("./Donutstore");
 console.log("Looking for DonutStore in Bucketlist", DonutStore);
 
 const BucketlistSchema = new mongoose.Schema ({
