@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const DonutStoreSchema = new mongoose.Schema({
+const DonutstoreSchema = new mongoose.Schema({
     place_id: String,
     name: String,
     formatted_address: String,
@@ -18,6 +18,6 @@ const DonutStoreSchema = new mongoose.Schema({
     }
 })
 
-const DonutStore = mongoose.model("DonutStore", DonutStoreSchema);
+const Donutstore = mongoose.model("Donutstore", DonutstoreSchema);
 
-module.exports = DonutStore;
+module.exports = Donutstore;
