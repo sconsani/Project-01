@@ -2,7 +2,7 @@ console.log("Sanity check -");
 
 $(document).ready(function(){
 
-    function getDonutStores() {
+    function getDonutstores() {
     $.ajax({
     method: "GET",
     url: "http://localhost:4000/api/v1/donutstores",
@@ -40,5 +40,5 @@ function donutCard(donutStore) {
         `;
 }
 
-getDonutStores();
+getDonutstores();
 });

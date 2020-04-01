@@ -12,7 +12,7 @@ mongoose.connect(DB_URI, {
 .catch((err) => console.log(err));
 
 
-const newDonutStore = [
+const newDonutstore = [
     {
         place_id: "",
         name: "Sunshine Cafe",
@@ -223,7 +223,7 @@ const newBucketlist = [
     }
 ];
 
-db.DonutStore.insertMany(newDonutStore, (err, donutStore) => {
+db.Donutstore.insertMany(newDonutstore, (err, donutStore) => {
     if (err) {
         console.log(err);
         process.exit();
@@ -245,7 +245,7 @@ db.Bucketlist.insertMany(newBucketlist, (err, bucketlist) => {
     }
 });
 
-// db.DonutStore.deleteMany({}, (err, result) => {
+// db.Donutstore.deleteMany({}, (err, result) => {
 // 	if (err) {
 // 		console.log(err);
 // 		process.exit();

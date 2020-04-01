@@ -33,7 +33,7 @@ const show = (req, res) => {
 
 const addToBucketlist = (req, res) => {
     debugger;
-    db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
+    db.Donutstore.findById(req.params.donutstoreId, (err, foundDonutstore) => {
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
@@ -43,7 +43,7 @@ const addToBucketlist = (req, res) => {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
 
-        foundBucketlist.bucketlist.push(foundDonutStore);
+        foundBucketlist.bucketlist.push(foundDonutstore);
 
         let updatedBucketlist;
         foundBucketlist.save((err, savedBucketlist) => {
@@ -53,13 +53,13 @@ const addToBucketlist = (req, res) => {
             updatedBucketlist = savedBucketlist;
             })
 
-        foundDonutStore.bucketlists.push(foundBucketlist.id);
+        foundDonutstore.bucketlists.push(foundBucketlist.id);
         
-        foundDonutStore.save((err, savedDonutStore) => {
+        foundDonutstore.save((err, savedDonutstore) => {
             if (err) {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
             }
-            res.json({updatedDonutStore: savedDonutStore, updatedBucketlist: updatedBucketlist});
+            res.json({updatedDonutstore: savedDonutstore, updatedBucketlist: updatedBucketlist});
             })
         })
     })
@@ -67,32 +67,32 @@ const addToBucketlist = (req, res) => {
 
 const addToVisited = (req, res) => {
     debugger;
-    db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
+    db.Donutstore.findById(req.params.donutstoreId, (err, foundDonutstore) => {
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
-        console.log("logging foundDonutStore", foundDonutStore);
+        console.log("logging foundDonutstore", foundDonutstore);
 
     db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
 
-        foundBucketlist.visitedStores.unshift(foundDonutStore);
+        foundBucketlist.visitedStores.unshift(foundDonutstore);
 
         foundBucketlist.save((err, savedBucketlist) => {
             if (err) {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
             }
-            res.json(foundDonutStore);
+            res.json(foundDonutstore);
             })
         })
     })
 };
 
 const remove = (req, res) => {
-    db.DonutStore.findById(req.params.donutstoreId, (err, foundDonutStore) => {
-        console.log("first found donutstore", foundDonutStore);
+    db.Donutstore.findById(req.params.donutstoreId, (err, foundDonutstore) => {
+        console.log("first found donutstore", foundDonutstore);
 
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
@@ -101,13 +101,13 @@ const remove = (req, res) => {
     db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
         debugger;
         console.log("logging foundbucketlist", foundBucketlist);
-        console.log("logging donutstore", foundDonutStore);
+        console.log("logging donutstore", foundDonutstore);
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
         
         for (let i = foundBucketlist.bucketlist.length - 1; i >= 0; i--) {
-            if (foundBucketlist.bucketlist[i].id === foundDonutStore.id) {
+            if (foundBucketlist.bucketlist[i].id === foundDonutstore.id) {
                 foundBucketlist.bucketlist.splice(i, 1);
             }
         }
@@ -121,18 +121,18 @@ const remove = (req, res) => {
             console.log("logging delBucketlist", delBucketlist)
             
         console.log("delBucketlist outside of codeblock", delBucketlist)
-        for (let i = foundDonutStore.bucketlists.length - 1; i >= 0; i--) {
-            if(foundDonutStore.bucketlists[i] == delBucketlist.id) {
-                foundDonutStore.bucketlists.splice(i, 1);
+        for (let i = foundDonutstore.bucketlists.length - 1; i >= 0; i--) {
+            if(foundDonutstore.bucketlists[i] == delBucketlist.id) {
+                foundDonutstore.bucketlists.splice(i, 1);
             }
         }
 
-        console.log("delBucketlist before DonutStore save", delBucketlist)
-        foundDonutStore.save((err, savedDonutStore) => {
+        console.log("delBucketlist before Donutstore save", delBucketlist)
+        foundDonutstore.save((err, savedDonutstore) => {
             if (err) {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
             }
-            res.json({delDonutStore: savedDonutStore, delBucketlist: delBucketlist});
+            res.json({delDonutstore: savedDonutstore, delBucketlist: delBucketlist});
             })
         })
     })

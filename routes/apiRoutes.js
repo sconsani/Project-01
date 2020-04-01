@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const ctrl = require("../controllers");
 
-// GET DonutStores Index
+// GET Donutstores Index
 router.get("/donutstores", ctrl.donutStoresCtrl.index);
 
 // POST Bucketlist Sign-up (create)

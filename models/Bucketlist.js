@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
-const DonutStore = require("./Donutstore");
-console.log("Looking for DonutStore in Bucketlist", DonutStore);
+const Donutstore = require("./Donutstore");
+console.log("Looking for Donutstore in Bucketlist", Donutstore);
 
 const BucketlistSchema = new mongoose.Schema ({
     userName: String,
     favDonut: String,
-    bucketlist: [DonutStore.schema],
-    visitedStores: [DonutStore.schema],
+    bucketlist: [Donutstore.schema],
+    visitedStores: [Donutstore.schema],
 });
 
 const Bucketlist = mongoose.model("Bucketlist", BucketlistSchema);
