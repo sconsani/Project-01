@@ -13,6 +13,6 @@ mongoose.connect(DB_URI, {
 
 
 module.exports = {
-    Donutstore: require("./Donutstore"),
-    Bucketlist: require("./Bucketlist"),
+    Donutstore: require("./donutstore"),
+    Bucketlist: require("./bucketlist"),
 };
