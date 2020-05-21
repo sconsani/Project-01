@@ -9,7 +9,7 @@ let doughnitBtn;
 
 		$.ajax({
 		method: "GET",
-		url: `http://localhost:4000/api/v1/bucketlist/${bucketlistId}/donutstores/${donutStoreId}`,
+		url: `https://safe-beyond-05848.herokuapp.com/api/v1/bucketlist/${bucketlistId}/donutstores/${donutStoreId}`,
 		success: function(res) {
 			renderStores(res);
 		},

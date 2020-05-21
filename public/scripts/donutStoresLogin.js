@@ -9,7 +9,7 @@ $(document).ready(function() {
        
         $.ajax({
         method: "GET",
-        url: `http://localhost:4000/api/v1/bucketlist/${userName}`,
+        url: `https://safe-beyond-05848.herokuapp.com/api/v1/bucketlist/${userName}`,
         success: onSuccess,
         error: (err) => {
             console.log(err);
