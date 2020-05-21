@@ -10,7 +10,7 @@ $(document).ready(function() {
 
         $.ajax({    
         method: "DELETE",
-        url: `https://safe-beyond-05848.herokuapp.com/api/v1/bucketlist/${bucketlistId}/donutstores/${donutStoreId}`,
+        url: `https://doughnit.herokuapp.com/api/v1/bucketlist/${bucketlistId}/donutstores/${donutStoreId}`,
         success: onSuccess,
         error: (err) => {
             console.log(err);

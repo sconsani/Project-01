@@ -5,7 +5,7 @@ $(document).ready(function(){
     function getDonutstores() {
     $.ajax({
     method: "GET",
-    url: "https://safe-beyond-05848.herokuapp.com/api/v1/donutstores",
+    url: "https://doughnit.herokuapp.com/api/v1/donutstores",
     success: function(res) {
         renderHomePage(res);
     },

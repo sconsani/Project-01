@@ -9,7 +9,7 @@ $(document).ready(function() {
        
         $.ajax({
         method: "GET",
-        url: `https://safe-beyond-05848.herokuapp.com/api/v1/bucketlist/${userName}`,
+        url: `https://doughnit.herokuapp.com/api/v1/bucketlist/${userName}`,
         success: onSuccess,
         error: (err) => {
             console.log(err);
