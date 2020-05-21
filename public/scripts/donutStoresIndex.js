@@ -1,4 +1,4 @@
-console.log("Sanity check -");
+console.log("Sanity check - donustore INDEX");
 
 $(document).ready(function(){
 

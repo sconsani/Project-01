@@ -22,7 +22,6 @@ function renderBucketlist(bucketlist) {
 	text-align: left;">${userName}'s Bucketlist:</h1>`);
 	$("header").append(`<p hidden class="hiddenId" id=${bucketlist._id}></p>`);
 
-	console.log("testing");
 	bucketlist.bucketlist.forEach(donutStore => {
 		$("#left-column").append(`${donutCard(donutStore)}`)
 	});

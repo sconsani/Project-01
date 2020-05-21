@@ -66,12 +66,10 @@ const addToBucketlist = (req, res) => {
 };
 
 const addToVisited = (req, res) => {
-    debugger;
     db.Donutstore.findById(req.params.donutstoreId, (err, foundDonutstore) => {
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
-        console.log("logging foundDonutstore", foundDonutstore);
 
     db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
         if (err) {
@@ -92,16 +90,12 @@ const addToVisited = (req, res) => {
 
 const remove = (req, res) => {
     db.Donutstore.findById(req.params.donutstoreId, (err, foundDonutstore) => {
-        console.log("first found donutstore", foundDonutstore);
 
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
 
     db.Bucketlist.findById(req.params.bucketlistId, (err, foundBucketlist) => {
-        debugger;
-        console.log("logging foundbucketlist", foundBucketlist);
-        console.log("logging donutstore", foundDonutstore);
         if (err) {
             return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
         }
@@ -118,16 +112,13 @@ const remove = (req, res) => {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});
             }
             delBucketlist = savedBucketlist;
-            console.log("logging delBucketlist", delBucketlist)
             
-        console.log("delBucketlist outside of codeblock", delBucketlist)
         for (let i = foundDonutstore.bucketlists.length - 1; i >= 0; i--) {
             if(foundDonutstore.bucketlists[i] == delBucketlist.id) {
                 foundDonutstore.bucketlists.splice(i, 1);
             }
         }
 
-        console.log("delBucketlist before Donutstore save", delBucketlist)
         foundDonutstore.save((err, savedDonutstore) => {
             if (err) {
                 return res.status(400).json({status: 400, error: "Something went wrong, please try again"});

@@ -6,7 +6,6 @@ $(document).ready(function() {
     $("#left-column").on("click", function(event) {
         if (event.target.classList.contains("closeBtn")) {
         let donutStoreId = event.target.id;
-        console.log(event.target);
         let bucketlistId = document.getElementsByClassName("hiddenId")[0].id;
 
         $.ajax({    
