@@ -6,7 +6,7 @@
 ### About This Web App
 “DOUGHNIT” is a web app made for users to explore various Donut Stores in the Bay Area, and “add” them to their Bucketlist of stores to check off as visited!
 
-#### Check it out
+#### Check It Out
 [DOUGHNIT!](https://doughnit.herokuapp.com/)  
 username: Laura
 
