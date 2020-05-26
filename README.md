@@ -3,12 +3,12 @@
 ## :doughnut: DOUGHNIT :doughnut:!
 ![Donut Corgi](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiNC1ltz6EHeyDdnXiNmrISZeUwmaRxXtyYNA8PoltAYZZsfNH)
 
-[DOUGHNIT here]()
-
 ### About This Web App
-https://github.com/sconsani/Project-01
-
 “DOUGHNIT” is a web app made for users to explore various Donut Stores in the Bay Area, and “add” them to their Bucketlist of stores to check off as visited!
+
+#### Check it out
+[DOUGHNIT!](https://doughnit.herokuapp.com/)
+username: Laura
 
 ### User Stories
 
